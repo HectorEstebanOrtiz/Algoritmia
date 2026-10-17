@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/esteb/OneDrive/Escritorio/EINA/Algoritmia_Dificiles/minisat/Picross/competencia/build/cmake_install.cmake",
+		"C:/Users/esteb/OneDrive/Escritorio/EINA/Algoritmia_Dificiles/minisat/Picross/competencia/build/src/stdutils/cmake_install.cmake",
+		"C:/Users/esteb/OneDrive/Escritorio/EINA/Algoritmia_Dificiles/minisat/Picross/competencia/build/src/picross/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

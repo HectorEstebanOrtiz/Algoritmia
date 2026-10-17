@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "../../../lib/libpicross.a"
+  "../../../lib/libpicross.pdb"
+  "CMakeFiles/picross.dir/src/binomial.cpp.obj"
+  "CMakeFiles/picross.dir/src/binomial.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/grid.cpp.obj"
+  "CMakeFiles/picross.dir/src/grid.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/input_grid.cpp.obj"
+  "CMakeFiles/picross.dir/src/input_grid.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/line.cpp.obj"
+  "CMakeFiles/picross.dir/src/line.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/line_alternatives.cpp.obj"
+  "CMakeFiles/picross.dir/src/line_alternatives.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/line_cache.cpp.obj"
+  "CMakeFiles/picross.dir/src/line_cache.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/line_constraint.cpp.obj"
+  "CMakeFiles/picross.dir/src/line_constraint.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/line_span.cpp.obj"
+  "CMakeFiles/picross.dir/src/line_span.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/output_grid.cpp.obj"
+  "CMakeFiles/picross.dir/src/output_grid.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/output_grid_utils.cpp.obj"
+  "CMakeFiles/picross.dir/src/output_grid_utils.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/picross_io.cpp.obj"
+  "CMakeFiles/picross.dir/src/picross_io.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/picross_solver_version.cpp.obj"
+  "CMakeFiles/picross.dir/src/picross_solver_version.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/picross_stats.cpp.obj"
+  "CMakeFiles/picross.dir/src/picross_stats.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/solver.cpp.obj"
+  "CMakeFiles/picross.dir/src/solver.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/solver_policy.cpp.obj"
+  "CMakeFiles/picross.dir/src/solver_policy.cpp.obj.d"
+  "CMakeFiles/picross.dir/src/work_grid.cpp.obj"
+  "CMakeFiles/picross.dir/src/work_grid.cpp.obj.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/picross.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

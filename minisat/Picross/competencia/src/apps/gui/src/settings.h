@@ -1,0 +1,94 @@
+#pragma once
+
+#include "parameter.h"
+#include "style.h"
+
+#include <memory>
+
+
+class Settings
+{
+public:
+    struct UILimits
+    {
+        Parameter::Limits<int> extra_scaling;
+    };
+    struct UI
+    {
+        gui_style::ExtraScaling extra_scaling;
+    };
+
+    struct TileLimits
+    {
+        Parameter::Limits<int> size_enum;
+        Parameter::Limits<float> rounding_ratio;
+        Parameter::Limits<float> size_ratio;
+        Parameter::Limits<bool> five_tile_border;
+        Parameter::Limits<bool> hide_depth_greater;
+        Parameter::Limits<int> hide_depth_value;
+    };
+    struct Tile
+    {
+        int size_enum;
+        float rounding_ratio;
+        float size_ratio;
+        bool five_tile_border;
+        bool hide_depth_greater;
+        int hide_depth_value;
+    };
+
+    struct SolverLimits
+    {
+        Parameter::Limits<bool> limit_solutions;
+        Parameter::Limits<int> max_nb_solutions;
+    };
+    struct Solver
+    {
+        bool limit_solutions;
+        int max_nb_solutions;
+    };
+
+    struct AnimationLimits
+    {
+        Parameter::Limits<bool> show_branching;
+        Parameter::Limits<bool> ftl;
+        Parameter::Limits<bool> one_event;
+        Parameter::Limits<int> speed;
+    };
+    struct Animation
+    {
+        bool show_branching;
+        bool ftl;
+        bool one_event;
+        int speed;
+    };
+
+public:
+    Settings();
+
+    // UI settings
+    UI* get_ui_settings();
+    const UI& read_ui_settings() const;
+    static const UILimits& read_ui_settings_limits();
+
+    // Tile settings
+    Tile* get_tile_settings();
+    const Tile& read_tile_settings() const;
+    static const TileLimits& read_tile_settings_limits();
+
+    // Solver settings
+    Solver* get_solver_settings();
+    const Solver& read_solver_settings() const;
+    static const SolverLimits& read_solver_settings_limits();
+
+    // Animation settings
+    Animation* get_animation_settings();
+    const Animation& read_animation_settings() const;
+    static const AnimationLimits& read_animation_settings_limits();
+
+private:
+    mutable std::unique_ptr<UI>        ui_settings;
+    mutable std::unique_ptr<Tile>      tile_settings;
+    mutable std::unique_ptr<Solver>    solver_settings;
+    mutable std::unique_ptr<Animation> animation_settings;
+};

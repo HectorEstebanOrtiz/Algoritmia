@@ -1,0 +1,21 @@
+GRID 1: Note
+  Size: 6x6
+  Solution nb 1: (branching depth: 0)
+  ...###
+  ...#.#
+  ...#.#
+  .###..
+  .###..
+  ......
+
+  Difficulty: LINE
+  Number of solutions found: 1
+  Max K: 2
+  Max branching depth: 0
+  Max number of alternatives on an empty line (initial grid pass): 10
+  Max number of alternatives after a  linear line reduction (change/all): 3/5
+  Number of full grid pass: 5
+  Number of single line  linear reduction (change/all): 11/24
+
+
+

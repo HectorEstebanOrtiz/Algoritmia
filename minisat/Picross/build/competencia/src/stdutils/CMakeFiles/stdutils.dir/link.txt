@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc ..\..\..\lib\libstdutils.a CMakeFiles/stdutils.dir/src/io.cpp.obj CMakeFiles/stdutils.dir/src/platform.cpp.obj CMakeFiles/stdutils.dir/src/string.cpp.obj
+C:\msys64\ucrt64\bin\ranlib.exe ..\..\..\lib\libstdutils.a

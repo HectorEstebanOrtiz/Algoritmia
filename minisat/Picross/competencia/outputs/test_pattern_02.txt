@@ -1,0 +1,24 @@
+GRID 1: Asterisk
+  Size: 9x9
+  Solution nb 1: (branching depth: 0)
+  ####.####
+  ####.####
+  ..##.##..
+  ##.....##
+  ####.####
+  ##.....##
+  ..##.##..
+  ####.####
+  ####.####
+
+  Difficulty: LINE
+  Number of solutions found: 1
+  Max K: 3
+  Max branching depth: 0
+  Max number of alternatives on an empty line (initial grid pass): 15
+  Max number of alternatives after a  linear line reduction (change/all): 0/1
+  Number of full grid pass: 2
+  Number of single line  linear reduction (change/all): 0/4
+
+
+
