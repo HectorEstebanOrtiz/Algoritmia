@@ -1,30 +1,17 @@
-#include <vector>
-#include "Carretera.hpp"
-#include <cmath>
-#include <list>
-#include <iostream>
-
-using namespace std;
-
-struct DestinosExpandidos {
-    int destino;
-    int sub_nodo;
-    double tiempo;
-    bool visitado = false;
-};
-struct nodo {
-    int nodo;
-    int sub_nodo;
-};
-using grafoNormal = vector<vector<Destinos>>;
-using grafoExpandido = vector<vector<vector<DestinosExpandidos>>>;
+#include "expander.hpp"
 
 grafoExpandido Expandir(const grafoNormal& original){
     grafoExpandido nuevoMapa;
     nuevoMapa.resize(original.size());
     for(int i = 0; i < original.size(); i++){
         int t = original[i].size();
-        if(t == 0) continue;
+        
+        // CAMBIO AQUÍ: En vez de saltarlo, creamos el subnodo 0 y luego saltamos
+        if(t == 0) {
+            nuevoMapa[i].resize(1); // Asegura que gE[i][0] exista y esté vacío
+            continue;
+        }
+        
         int dimensiones = ceil(log2(t));
         int tamagno = 1 << dimensiones;
         nuevoMapa[i].resize(tamagno);
@@ -97,7 +84,7 @@ DestinosExpandidos buscarSubNodo(int s, int subnodo_s, grafoExpandido& gE) {
     return DestinosExpandidos{-1, -1, 0.0}; // No se encontró camino válido
 }
 
-bool buscarCamino(grafoExpandido& gE, int s, int t, list<Carretera>& camino, int subnodo_s = 0){
+bool buscarCamino(grafoExpandido& gE, int s, int t, list<Carretera>& camino, int subnodo_s){
     if(s == t){
         return true;
     }else{
@@ -105,44 +92,15 @@ bool buscarCamino(grafoExpandido& gE, int s, int t, list<Carretera>& camino, int
         if(actual.sub_nodo == -1){
             return false;
         }
+        actual.visitado = true; // Marcamos la arista como visitada
         while(!buscarCamino(gE, actual.destino, t, camino, actual.sub_nodo)){
             actual = buscarSubNodo(s, subnodo_s, gE);
             if(actual.sub_nodo == -1){
                 return false;
             }
+            actual.visitado = true; // Marcamos la arista como visitada
         }
         camino.push_front({s,{actual.destino, actual.tiempo}});
         return true;
     }
-}
-
-int main() {
-    vector<vector<Destinos>> destinos = {
-        // Aquí pones los destinos del nodo 0 (por ejemplo, si va al 1 o al 2)
-        {{1, 2.0}},                   // Índice 0: Nodo 0 
-        {{2, 5.0}, {0, 10.0}},        // Índice 1: Nodo 1
-        {{4, 3.0}, {1, 7.0}},         // Índice 2: Nodo 2
-        {{6, 2.0}},                   // Índice 3: Nodo 3
-        {{1, 1.0}},                   // Índice 4: Nodo 4
-        {{6, 4.0}},                   // Índice 5: Nodo 5
-        {}                            // Índice 6: Nodo 6 (final)
-    };
-
-    int origen = 1;
-    int destino = 6;
-    double tiempoTotal = 0.0;
-    grafoExpandido exp = Expandir(destinos);
-    list<Carretera> camino = {};
-    if(buscarCamino(exp, origen, destino, camino)){
-        cout << "Camino desde " << origen << " hasta " << destino << ":" << endl;
-        for (const auto& carretera : camino) {
-            cout << "Origen: " << carretera.origen << ", Destino: " << carretera.destino.destino 
-                << ", Tiempo: " << carretera.destino.tiempo << endl;
-            tiempoTotal += carretera.destino.tiempo;
-        }
-        cout << "Tiempo total: " << tiempoTotal << endl;
-    }else{
-        cout << "No hay camino" << endl;
-    }
-    return 0;
 }
