@@ -60,7 +60,7 @@ void generarCNFPicrossMiniSat(Solver& solver, const vector<int>& pistas, int lon
         }
     }
 
-    /*Clausulas de propagacion entre bloques adyacentes, es decir que si un bloque empieza
+    /*Segunda Clausula: Propagacion entre bloques adyacentes, es decir que si un bloque empieza
      en una posicion p entonces el siguiente bloque no puede empezar antes de 
      p + tamaño del bloque + 1. O viceversa, si un bloque empieza en una posicion q entonces el bloque
       anterior no puede empezar despues de q - tamaño del bloque - 1.
