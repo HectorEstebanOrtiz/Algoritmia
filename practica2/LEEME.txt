@@ -1,0 +1,23 @@
+Fustero Zumeta, Ciro  900506@unizar.es  a900506
+Esteban Ortiz, Hector  898030@unizar.es  a898030
+
+1. ORGANIZACION DEL CODIGO
+El codigo principal de la Practica se encuentra todo en el fichero main.cpp y modulos expander.cpp y probabilista.cpp.
+El codigo de analizador_resultados.cpp es un codigo adicional para que el script genere una tabla con los resultados de todas las pruebas.
+
+2. FORMATO DE ENTRADA
+El codigo unicamente funciona con fichero que siguen la siguiente estructura:
+  1. La primera linea es N M s t, siendo N el numero de vertices, M el numero de aristas, s el vertice origen y t el destino.
+  2. Las siguientes lineas representan las conexiones entre vertices y su longitud/tiempo
+  
+3. COMPILACION Y EJECUCION
+Para la compilacion del codigo deberas de ejecutar el siguiente comando en el mismo directorio de la practica2:
+  # g++ expander.cpp probabilista.cpp ejecutarPruebas.cpp -o p2.exe
+
+Y para ejecutarla deberas de usar:
+  # ./p2 fichero_de_prueba.txt
+  
+O simplemente puedes ejecutar el script ejecutar2.sh dandole antes permisos con "chmod u+x ejecutar2.sh", lo cual compilara y ejecutara el codigo con todos los ficheros que haya en la carpeta "tests" y dejando los resultados en la carpeta "resultadoPruebasAuto" y una tabla resumen en el fichero "tablaResultados.txt" generado en el mismo directorio donde lo ejecutes.
+
+4. PRUEBAS
+Todas las pruebas se encuentran por defecto en la carpeta "tests", hay muchos bastantes pesados asi que si quieres que el script no lo ejecute sacalo de la carpeta
